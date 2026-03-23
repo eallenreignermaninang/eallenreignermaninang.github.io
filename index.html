@@ -1,148 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Eallen Reigner Maninang | Frontend Developer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Eallen Reigner Maninang | QA Engineer & Developer</title>
 
-  <style>
-    *{box-sizing:border-box;margin:0;padding:0}
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
 
-    body{
-      font-family:'Inter',sans-serif;
-      background:#0f172a;
-      color:#e2e8f0;
-      line-height:1.6;
-    }
+<style>
+* { box-sizing: border-box; margin:0; padding:0; scroll-behavior:smooth; font-family:'Inter',sans-serif; }
+body { background:#0f172a; color:#e2e8f0; line-height:1.6; }
 
-    header{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:25px 10%;
-      position:sticky;
-      top:0;
-      background:#020617;
-    }
+/* Header */
+header { display:flex; justify-content:space-between; align-items:center; padding:25px 10%; position:sticky; top:0; background:#020617; z-index:1000; }
+header h1 { font-size:20px; color:#38bdf8; }
+nav a { margin-left:25px; text-decoration:none; color:#cbd5f5; font-size:14px; transition:0.3s; }
+nav a:hover { color:#38bdf8; }
 
-    header h1{
-      font-size:20px;
-      color:#38bdf8;
-    }
+/* Hero */
+.hero { padding:120px 10%; display:grid; grid-template-columns:1fr 1fr; align-items:center; gap:40px; }
+.hero h2 { font-size:48px; margin-bottom:10px; animation: fadeInUp 1s ease forwards; }
+.hero span { color:#38bdf8; }
+.hero p { font-size:18px; color:#94a3b8; margin-bottom:20px; animation: fadeInUp 1.2s ease forwards; }
+.profile-img { width:320px; border-radius:50%; border:3px solid #38bdf8; animation: float 4s ease-in-out infinite; }
 
-    nav a{
-      margin-left:25px;
-      text-decoration:none;
-      color:#cbd5f5;
-      font-size:14px;
-    }
+/* Buttons */
+.btn { background:#38bdf8; color:#020617; padding:12px 20px; text-decoration:none; border-radius:8px; font-weight:600; margin-right:10px; transition:0.3s; }
+.btn:hover { transform:translateY(-3px); box-shadow:0 10px 20px rgba(56,189,248,0.3); }
+.btn-outline { border:1px solid #38bdf8; color:#38bdf8; padding:12px 20px; border-radius:8px; text-decoration:none; transition:0.3s; }
+.btn-outline:hover { background:#38bdf8; color:#020617; }
 
-    nav a:hover{
-      color:#38bdf8;
-    }
+/* Sections */
+section { padding:100px 10%; }
+.section-title { font-size:32px; margin-bottom:40px; color:#38bdf8; }
 
-    .hero{
-      padding:120px 10%;
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      align-items:center;
-      gap:40px;
-    }
+/* Skills */
+.skills { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:20px; }
+.skill { background:#020617; padding:20px; border-radius:10px; text-align:center; border:1px solid #1e293b; transition:0.3s; }
+.skill:hover { transform:translateY(-5px); border-color:#38bdf8; }
 
-    .hero h2{
-      font-size:48px;
-      margin-bottom:20px;
-    }
+/* QA Insights */
+.qa-insights { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:20px; margin-top:40px; }
+.qa-box { background:#020617; padding:25px; border-radius:10px; border:1px solid #1e293b; text-align:center; transition:0.3s; }
+.qa-box:hover { transform:scale(1.05); border-color:#38bdf8; }
+.qa-box h3 { font-size:28px; color:#38bdf8; }
 
-    .hero span{
-      color:#38bdf8;
-    }
+/* Projects */
+.projects { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:25px; }
+.project { background:#020617; padding:25px; border-radius:10px; border:1px solid #1e293b; transition:0.3s; opacity:0; transform:translateY(40px); }
+.project.show { opacity:1; transform:translateY(0); }
+.project:hover { transform:translateY(-8px); box-shadow:0 10px 25px rgba(0,0,0,0.4); }
+.project img { width:100%; border-radius:8px; margin-top:15px; }
+.project h3 { margin-bottom:10px; color:#38bdf8; }
+.tech { margin-top:10px; font-size:14px; color:#94a3b8; }
 
-    .hero p{
-      font-size:18px;
-      color:#94a3b8;
-      margin-bottom:30px;
-    }
+/* QA Documentation Table */
+.qa-controls { display:flex; justify-content:space-between; flex-wrap:wrap; margin-bottom:20px; gap:10px; }
+.qa-controls input, .qa-controls select { padding:10px; border-radius:8px; border:1px solid #38bdf8; background:#020617; color:#e2e8f0; outline:none; }
 
-    .btn{
-      background:#38bdf8;
-      color:#020617;
-      padding:12px 20px;
-      text-decoration:none;
-      border-radius:8px;
-      font-weight:600;
-      margin-right:10px;
-    }
+.qa-table { width:100%; border-collapse:collapse; margin-bottom:50px; }
+.qa-table th, .qa-table td { border:1px solid #38bdf8; padding:12px; text-align:left; }
+.qa-table th { background-color:#1e293b; color:#38bdf8; }
+.qa-table tr:nth-child(even) { background-color:#111827; }
+.qa-table tr:hover { background-color:#1e293b; transform:scale(1.02); transition:0.3s; cursor:pointer; }
+.badge { padding:4px 10px; border-radius:12px; font-size:12px; font-weight:600; color:#020617; }
+.badge.Open { background:#f87171; }
+.badge.Fixed { background:#34d399; }
+.badge["In Progress"] { background:#facc15; }
+.expand-row { display:none; background:#1e293b; }
 
-    .btn-outline{
-      border:1px solid #38bdf8;
-      color:#38bdf8;
-      padding:12px 20px;
-      border-radius:8px;
-      text-decoration:none;
-    }
+/* Animations */
+@keyframes fadeInUp { from {opacity:0; transform:translateY(30px);} to {opacity:1; transform:translateY(0);} }
+@keyframes float { 0%,100% {transform:translateY(0);} 50% {transform:translateY(-15px);} }
 
-    section{
-      padding:100px 10%;
-    }
-
-    .section-title{
-      font-size:32px;
-      margin-bottom:40px;
-      color:#38bdf8;
-    }
-
-    .skills{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-      gap:20px;
-    }
-
-    .skill{
-      background:#020617;
-      padding:20px;
-      border-radius:10px;
-      text-align:center;
-      border:1px solid #1e293b;
-    }
-
-    .projects{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-      gap:25px;
-    }
-
-    .project{
-      background:#020617;
-      padding:25px;
-      border-radius:10px;
-      border:1px solid #1e293b;
-    }
-
-    .project h3{
-      margin-bottom:10px;
-      color:#38bdf8;
-    }
-
-    footer{
-      text-align:center;
-      padding:40px;
-      background:#020617;
-      color:#94a3b8;
-      font-size:14px;
-    }
-
-    @media(max-width:900px){
-      .hero{
-        grid-template-columns:1fr;
-        text-align:center;
-      }
-    }
-
-  </style>
+/* Responsive */
+@media(max-width:900px){.hero{grid-template-columns:1fr;text-align:center;}.profile-img{margin:auto;}}
+</style>
 </head>
-
 <body>
 
 <header>
@@ -150,123 +84,198 @@
   <nav>
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
+    <a href="#qa">QA Expertise</a>
+    <a href="#qa-docs">QA Documentation</a>
     <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
   </nav>
 </header>
 
 <section class="hero">
-
-<div>
-  <h2>Hi, I'm <span>Eallen</span></h2>
-  <p>
-    Computer Science graduate with experience in QA testing and growing
-    expertise in Frontend Development. Passionate about building modern
-    and user‑friendly web applications.
-  </p>
-
-  <a class="btn" href="#projects">View Projects</a>
-  <a class="btn-outline" href="#contact">Contact Me</a>
-</div>
-
-<div>
-  <img src="profile.jpg" alt="profile" style="width:50%;border-radius:12px;">
-</div>
-
+  <div>
+    <h2>Hi, I'm <span>Eallen</span></h2>
+    <p><strong>QA Engineer • Frontend Developer</strong></p>
+    <p>Specializing in testing, documenting, and building reliable software with strong UX focus.</p>
+    <a class="btn" href="#projects">View Projects</a>
+    <a class="btn-outline" href="#contact">Contact Me</a>
+  </div>
+  <div>
+    <img src="profile.jpg" alt="profile" class="profile-img" />
+  </div>
 </section>
 
 <section id="about">
-
-<h2 class="section-title">About Me</h2>
-
-<p>
-I am a developer with a background in Quality Assurance and Software Testing.
-This experience allows me to build applications with strong attention to
-usability, reliability, and user experience.
-
-Currently expanding my skills through full‑stack development training
-while building projects that focus on clean UI and functional design.
-</p>
-
+  <h2 class="section-title">About Me</h2>
+  <p>QA + Frontend Developer blending testing expertise with UI/UX implementation to deliver polished software.</p>
 </section>
 
 <section id="skills">
+  <h2 class="section-title">Skills</h2>
+  <div class="skills">
+    <div class="skill">HTML</div>
+    <div class="skill">CSS</div>
+    <div class="skill">JavaScript</div>
+    <div class="skill">React</div>
+    <div class="skill">Git</div>
+    <div class="skill">SQL</div>
+    <div class="skill">Manual Testing</div>
+    <div class="skill">Test Case Design</div>
+    <div class="skill">Bug Tracking</div>
+  </div>
+</section>
 
-<h2 class="section-title">Skills</h2>
+<section id="qa">
+  <h2 class="section-title">QA Expertise</h2>
+  <div class="qa-insights">
+    <div class="qa-box"><h3>100+</h3><p>Test Cases Written</p></div>
+    <div class="qa-box"><h3>50+</h3><p>Bugs Identified</p></div>
+    <div class="qa-box"><h3>95%</h3><p>UI Consistency Accuracy</p></div>
+    <div class="qa-box"><h3>Agile</h3><p>Workflow Experience</p></div>
+  </div>
+</section>
 
-<div class="skills">
+<section id="qa-docs">
+  <h2 class="section-title">QA Documentation</h2>
+  <p>Explore my QA documentation interactively. Filter by status, search by keywords, and expand each test case or bug for details.</p>
 
-<div class="skill">HTML</div>
-<div class="skill">CSS</div>
-<div class="skill">JavaScript</div>
-<div class="skill">React</div>
-<div class="skill">Git</div>
-<div class="skill">SQL</div>
-<div class="skill">QA Testing</div>
+  <!-- Dynamic Metrics -->
+  <div class="qa-metrics" style="display:flex; gap:20px; margin-bottom:30px; flex-wrap:wrap;">
+    <div class="qa-box" id="metric-testcases" style="flex:1; min-width:150px;"><h3>0</h3><p>Test Cases Written</p></div>
+    <div class="qa-box" id="metric-bugs" style="flex:1; min-width:150px;"><h3>0</h3><p>Bugs Identified</p></div>
+  </div>
 
-</div>
+  <!-- Search & Filter -->
+  <div class="qa-controls">
+    <input type="text" id="qa-search" placeholder="Search Test Cases / Bugs" />
+    <select id="qa-filter">
+      <option value="All">All Status</option>
+      <option value="Open">Open</option>
+      <option value="Fixed">Fixed</option>
+      <option value="In Progress">In Progress</option>
+    </select>
+  </div>
 
+  <!-- Interactive QA Table -->
+  <table class="qa-table" id="qa-table">
+    <thead>
+      <tr><th>ID</th><th>Title</th><th>Status</th></tr>
+    </thead>
+    <tbody>
+      <tr class="qa-row" data-status="Fixed">
+        <td>TC001</td><td>Login Validation</td><td><span class="badge Fixed">Fixed</span></td>
+      </tr>
+      <tr class="expand-row"><td colspan="3">Steps: Open login page, enter valid credentials, click Login. Expected: User redirected to dashboard.</td></tr>
+
+      <tr class="qa-row" data-status="Open">
+        <td>TC002</td><td>Invalid Login</td><td><span class="badge Open">Open</span></td>
+      </tr>
+      <tr class="expand-row"><td colspan="3">Steps: Enter invalid password, click Login. Expected: Error message displayed.</td></tr>
+
+      <tr class="qa-row" data-status="In Progress">
+        <td>BUG003</td><td>Incorrect total price</td><td><span class="badge In Progress">In Progress</span></td>
+      </tr>
+      <tr class="expand-row"><td colspan="3">Steps: Add multiple items to cart. Expected: Cart shows correct total price.</td></tr>
+
+      <tr class="qa-row" data-status="Fixed">
+        <td>TC004</td><td>Login Page UI</td><td><span class="badge Fixed">Fixed</span></td>
+      </tr>
+      <tr class="expand-row"><td colspan="3">Steps: Check UI alignment, buttons, fonts, and responsiveness of login page.</td></tr>
+
+      <tr class="qa-row" data-status="Fixed">
+        <td>TC005</td><td>Password Reset</td><td><span class="badge Fixed">Fixed</span></td>
+      </tr>
+      <tr class="expand-row"><td colspan="3">Steps: Open login page, click "Forgot Password", enter registered email, submit. Expected: Password reset email sent.</td></tr>
+
+      <!-- You can add more rows here -->
+    </tbody>
+  </table>
 </section>
 
 <section id="projects">
-
-<h2 class="section-title">Projects</h2>
-
-<div class="projects">
-
-<div class="project">
-<h3>The Mal De Wear Fashion E-commerce system</h3>
-A web application designed to offer a diverse range of clothing items for both men and women. It aims to provide a seamless and convenient shopping experience, catering to fashion-savvy individuals.
-<p>A productivity web application for managing tasks and priorities.</p>
-
-</div>
-
-
-<div class="project">
-<h3>Home Page</h3>
-<p><img src="homepage.jpg" alt="profile" style="width:100%;border-radius:12px;"></p>
-</div>
-
-<div class="project">
-<h3>Home Page Continuation</h3>
-<p><img src="homepagecontinuation.jpg" alt="profile" style="width:100%;border-radius:12px;"></p>
-</div>
-
-<div class="project">
-<h3>Login Page</h3>
-<p><img src="Mal_de_wear_login_page.jpg" alt="profile" style="width:100%;border-radius:12px;"></p>
-</div>
-
-<div class="project">
-<h3>Sign Up Page</h3>
-<p><img src="Mal_de_wear_signup_page.png" alt="profile" style="width:100%;border-radius:12px;"></p>
-</div>
-
-
-<div class="project">
-<h3>Portfolio Website</h3>
-<p>A modern responsive portfolio built with HTML, CSS, and JavaScript.</p>
-</div>
-
-</div>
-
+  <h2 class="section-title">Projects</h2>
+  <div class="projects">
+    <div class="project">
+      <h3>Mal De Wear Fashion E-Commerce System</h3>
+      <p>Developed and tested a fashion e-commerce platform with usability and UI consistency focus. Test cases and bug tracking included.</p>
+      <p class="tech"><strong>Technologies:</strong> HTML, CSS, JS</p>
+      <img src="homepage.jpg" alt="Mal De Wear homepage" />
+      <a class="btn" href="https://github.com/eallenreignermaninang" target="_blank" rel="noopener noreferrer">View Code</a>
+    </div>
+    <div class="project">
+      <h3>Portfolio Website</h3>
+      <p>Responsive portfolio emphasizing performance, accessibility, and cross-browser compatibility.</p>
+      <p class="tech"><strong>Technologies:</strong> HTML, CSS, JS</p>
+    </div>
+  </div>
 </section>
 
 <section id="contact">
-
-<h2 class="section-title">Contact</h2>
-
-<p>Email: eallenreigner.maninang@gmail.com</p>
-<p>GitHub: github.com/eallenreignermaninang</p>
-<p>LinkedIn: linkedin.com/in/eallenm/</p>
-
+  <h2 class="section-title">Contact</h2>
+  <p>Email: <a href="mailto:eallenreigner.maninang@gmail.com">eallenreigner.maninang@gmail.com</a></p>
+  <p>GitHub: <a href="https://github.com/eallenreignermaninang" target="_blank" rel="noopener noreferrer">github.com/eallenreignermaninang</a></p>
+  <p>LinkedIn: <a href="https://linkedin.com/in/eallenm" target="_blank" rel="noopener noreferrer">linkedin.com/in/eallenm</a></p>
 </section>
 
 <footer>
-
-<p>© 2026 Eallen Reigner Maninang</p>
-
+  <p>© 2026 Eallen Reigner Maninang</p>
 </footer>
 
+<script>
+// Scroll reveal for projects
+const projects = document.querySelectorAll('.project');
+function revealOnScroll() {
+  const windowHeight = window.innerHeight;
+  projects.forEach(p => { 
+    const rect = p.getBoundingClientRect();
+    if(rect.top < windowHeight - 100) p.classList.add('show'); 
+  });
+}
+window.addEventListener('scroll', revealOnScroll);
+window.addEventListener('load', revealOnScroll);
+
+// Expand/Collapse rows
+document.querySelectorAll('.qa-row').forEach(row => {
+  row.addEventListener('click', () => {
+    const next = row.nextElementSibling;
+    if(next.classList.contains('expand-row')) {
+      next.style.display = next.style.display === 'table-row' ? 'none' : 'table-row';
+    }
+  });
+});
+
+// Search & Filter
+document.getElementById('qa-search').addEventListener('input', function() {
+  const term = this.value.toLowerCase();
+  document.querySelectorAll('#qa-table tbody tr.qa-row').forEach(row => {
+    const text = row.innerText.toLowerCase();
+    row.style.display = text.includes(term) ? '' : 'none';
+    if(row.nextElementSibling.classList.contains('expand-row')) row.nextElementSibling.style.display = 'none';
+  });
+});
+
+document.getElementById('qa-filter').addEventListener('change', function() {
+  const value = this.value;
+  document.querySelectorAll('#qa-table tbody tr.qa-row').forEach(row => {
+    const status = row.dataset.status;
+    row.style.display = (value === 'All' || value === status) ? '' : 'none';
+    if(row.nextElementSibling.classList.contains('expand-row')) row.nextElementSibling.style.display = 'none';
+  });
+});
+
+// Dynamic QA Metrics
+function updateQAMetrics() {
+  const rows = document.querySelectorAll('#qa-table tbody tr.qa-row');
+  let testCases = 0, bugs = 0;
+  rows.forEach(row => {
+    const id = row.cells[0].innerText.trim().toLowerCase();
+    if(id.startsWith('tc')) testCases++;
+    else if(id.startsWith('bug')) bugs++;
+  });
+  document.querySelector('#metric-testcases h3').innerText = testCases;
+  document.querySelector('#metric-bugs h3').innerText = bugs;
+}
+
+window.addEventListener('load', () => { updateQAMetrics(); });
+</script>
 </body>
 </html>
