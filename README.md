@@ -96,6 +96,8 @@ View the latest run: [Actions Tab](https://github.com/eallenreignermaninang/eall
 - Added Playwright automated test suite (UI, content, contact tests)
 - Added Page Object Model design pattern
 - Expanded CI/CD pipeline to include automated browser testing
+- Identified mobile navigation bug via automated tests (Issue #1)
+- Fix in progress: adding responsive hamburger menu (fix/mobile-nav)
 - Improved documentation and project structure
 
 ---
