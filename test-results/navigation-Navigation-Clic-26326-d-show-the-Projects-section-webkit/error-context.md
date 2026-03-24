@@ -1,0 +1,143 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - heading "Eallen" [level=1] [ref=e3]
+    - navigation [ref=e4]:
+      - link "About" [ref=e5]:
+        - /url: "#about"
+      - link "Skills" [ref=e6]:
+        - /url: "#skills"
+      - link "QA Expertise" [ref=e7]:
+        - /url: "#qa"
+      - link "QA Documentation" [ref=e8]:
+        - /url: "#qa-docs"
+      - link "Projects" [ref=e9]:
+        - /url: "#projects"
+      - link "Contact" [ref=e10]:
+        - /url: "#contact"
+  - generic [ref=e11]:
+    - generic [ref=e12]:
+      - heading "Hi, I'm Eallen" [level=2] [ref=e13]
+      - paragraph [ref=e14]:
+        - strong [ref=e15]: QA Engineer • Frontend Developer
+      - paragraph [ref=e16]: Specializing in testing, documenting, and building reliable software with strong UX focus.
+      - link "View Projects" [ref=e17]:
+        - /url: "#projects"
+      - link "Contact Me" [ref=e18]:
+        - /url: "#contact"
+    - img "profile" [ref=e20]
+  - generic [ref=e21]:
+    - heading "About Me" [level=2] [ref=e22]
+    - paragraph [ref=e23]: QA + Frontend Developer blending testing expertise with UI/UX implementation to deliver polished software.
+  - generic [ref=e24]:
+    - heading "Skills" [level=2] [ref=e25]
+    - generic [ref=e26]:
+      - generic [ref=e27]: HTML
+      - generic [ref=e28]: CSS
+      - generic [ref=e29]: JavaScript
+      - generic [ref=e30]: React
+      - generic [ref=e31]: Git
+      - generic [ref=e32]: SQL
+      - generic [ref=e33]: Manual Testing
+      - generic [ref=e34]: Test Case Design
+      - generic [ref=e35]: Bug Tracking
+  - generic [ref=e36]:
+    - heading "QA Expertise" [level=2] [ref=e37]
+    - generic [ref=e38]:
+      - generic [ref=e39]:
+        - heading "100+" [level=3] [ref=e40]
+        - paragraph [ref=e41]: Test Cases Written
+      - generic [ref=e42]:
+        - heading "50+" [level=3] [ref=e43]
+        - paragraph [ref=e44]: Bugs Identified
+      - generic [ref=e45]:
+        - heading "95%" [level=3] [ref=e46]
+        - paragraph [ref=e47]: UI Consistency Accuracy
+      - generic [ref=e48]:
+        - heading "Agile" [level=3] [ref=e49]
+        - paragraph [ref=e50]: Workflow Experience
+  - generic [ref=e51]:
+    - heading "QA Documentation" [level=2] [ref=e52]
+    - paragraph [ref=e53]: Explore my QA documentation interactively. Filter by status, search by keywords, and expand each test case or bug for details.
+    - generic [ref=e54]:
+      - generic [ref=e55]:
+        - heading "5" [level=3] [ref=e56]
+        - paragraph [ref=e57]: Test Cases Written
+      - generic [ref=e58]:
+        - heading "1" [level=3] [ref=e59]
+        - paragraph [ref=e60]: Bugs Identified
+    - generic [ref=e61]:
+      - textbox "Search Test Cases / Bugs" [ref=e62]
+      - combobox [ref=e63]:
+        - option "All Status" [selected]
+        - option "Open"
+        - option "Fixed"
+        - option "In Progress"
+    - table [ref=e64]:
+      - rowgroup [ref=e65]:
+        - row "ID Title Status" [ref=e66]:
+          - columnheader "ID" [ref=e67]
+          - columnheader "Title" [ref=e68]
+          - columnheader "Status" [ref=e69]
+      - rowgroup [ref=e70]:
+        - row "TC001 Login Validation Fixed" [ref=e71]:
+          - cell "TC001" [ref=e72]
+          - cell "Login Validation" [ref=e73]
+          - cell "Fixed" [ref=e74]
+        - row "TC002 Invalid Login Open" [ref=e75]:
+          - cell "TC002" [ref=e76]
+          - cell "Invalid Login" [ref=e77]
+          - cell "Open" [ref=e78]
+        - row "BUG003 Incorrect total price In Progress" [ref=e79]:
+          - cell "BUG003" [ref=e80]
+          - cell "Incorrect total price" [ref=e81]
+          - cell "In Progress" [ref=e82]
+        - row "TC004 Login Page UI Fixed" [ref=e83]:
+          - cell "TC004" [ref=e84]
+          - cell "Login Page UI" [ref=e85]
+          - cell "Fixed" [ref=e86]
+        - row "TC005 Password Reset Fixed" [ref=e87]:
+          - cell "TC005" [ref=e88]
+          - cell "Password Reset" [ref=e89]
+          - cell "Fixed" [ref=e90]
+        - row "TC006 Email Reset Fixed" [ref=e91]:
+          - cell "TC006" [ref=e92]
+          - cell "Email Reset" [ref=e93]
+          - cell "Fixed" [ref=e94]
+  - generic [ref=e95]:
+    - heading "Projects" [level=2] [ref=e96]
+    - generic [ref=e97]:
+      - generic [ref=e98]:
+        - heading "Mal De Wear Fashion E-Commerce System" [level=3] [ref=e99]
+        - paragraph [ref=e100]: Developed and tested a fashion e-commerce platform with usability and UI consistency focus. Test cases and bug tracking included.
+        - paragraph [ref=e101]:
+          - strong [ref=e102]: "Technologies:"
+          - text: HTML, CSS, JS
+        - img "Mal De Wear homepage" [ref=e103]
+        - link "View Code" [ref=e104]:
+          - /url: https://github.com/eallenreignermaninang
+      - generic [ref=e105]:
+        - heading "Portfolio Website" [level=3] [ref=e106]
+        - paragraph [ref=e107]: Responsive portfolio emphasizing performance, accessibility, and cross-browser compatibility.
+        - paragraph [ref=e108]:
+          - strong [ref=e109]: "Technologies:"
+          - text: HTML, CSS, JS
+  - generic [ref=e110]:
+    - heading "Contact" [level=2] [ref=e111]
+    - paragraph [ref=e112]:
+      - text: "Email:"
+      - link "eallenreigner.maninang@gmail.com" [ref=e113]:
+        - /url: mailto:eallenreigner.maninang@gmail.com
+    - paragraph [ref=e114]:
+      - text: "GitHub:"
+      - link "github.com/eallenreignermaninang" [ref=e115]:
+        - /url: https://github.com/eallenreignermaninang
+    - paragraph [ref=e116]:
+      - text: "LinkedIn:"
+      - link "linkedin.com/in/eallenm" [ref=e117]:
+        - /url: https://linkedin.com/in/eallenm
+  - contentinfo [ref=e118]:
+    - paragraph [ref=e119]: © 2026 Eallen Reigner Maninang
+```
