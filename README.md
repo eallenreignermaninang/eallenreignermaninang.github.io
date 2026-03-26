@@ -96,13 +96,6 @@ View the latest run: [Actions Tab](https://github.com/eallenreignermaninang/eall
 - Added Playwright automated test suite (UI, content, contact tests)
 - Added Page Object Model design pattern
 - Expanded CI/CD pipeline to include automated browser testing
-<<<<<<< Updated upstream
-=======
-- Identified mobile navigation bug via Playwright automated tests (Issue #1)
-- Fixed responsive navigation — added hamburger menu for mobile viewports
-- Resolved strict mode selector violations in Page Object Model
-- 92/92 Playwright tests passing across Chromium, Firefox, WebKit, and Mobile Chrome
->>>>>>> Stashed changes
 - Improved documentation and project structure
 
 ---
