@@ -78,53 +78,44 @@ test.describe('Portfolio Sections', () => {
 
   });
 
-  // ─── PROJECTS SECTION ───────────────────────────────────────
-  test.describe('Projects Section', () => {
+ // ─── PROJECTS SECTION ───────────────────────────────────────
+test.describe('Projects Section', () => {
 
-    test('Projects section should be visible', async ({ page }) => {
-      const portfolio = new PortfolioPage(page);
-      await expect(portfolio.projectsSection).toBeVisible();
-    });
+  test('Projects with repositories should have View Code links', async ({ page }) => {
+    const codeLinks = page.locator('#projects a.btn');
 
-    test('Mal De Wear project should be listed', async ({ page }) => {
-      // ✅ Checks: Is your featured project mentioned?
-      const projectsText = await page.locator('#projects').innerText();
-      expect(projectsText).toMatch(/Mal De Wear/i);
-    });
+    await expect(codeLinks).toHaveCount(3);
 
-    test('Project should have a View Code link', async ({ page }) => {
-      // ✅ Checks: Does the project card have a .btn link (the "View Code" button)?
-      // Your HTML uses <a class="btn" href="https://github.com/..."> inside #projects
-      const codeLink = page.locator('#projects a.btn');
-      await expect(codeLink).toBeVisible();
-    });
-
+    for (const link of await codeLinks.all()) {
+      await expect(link).toBeVisible();
+      await expect(link).toHaveAttribute('href', /github\.com/);
+    }
   });
 
-  // ─── RESPONSIVENESS ─────────────────────────────────────────
-  test.describe('Responsive Design', () => {
+}); // ← closes Projects Section
 
-    test('Portfolio should look correct on mobile viewport', async ({ page }) => {
-      // 📱 Simulate a mobile screen (iPhone SE size)
-      await page.setViewportSize({ width: 375, height: 667 });
-      await page.goto('/');
+// ─── RESPONSIVENESS ─────────────────────────────────────────
+test.describe('Responsive Design', () => {
 
-      const portfolio = new PortfolioPage(page);
+  test('Portfolio should look correct on mobile viewport', async ({ page }) => {
+    await page.setViewportSize({ width: 375, height: 667 });
+    await page.goto('/');
 
-      // ✅ Checks: Core content still visible on mobile
-      await expect(portfolio.heroHeading).toBeVisible();
-      await expect(portfolio.contactSection).toBeVisible();
-    });
+    const portfolio = new PortfolioPage(page);
 
-    test('Portfolio should look correct on tablet viewport', async ({ page }) => {
-      // 📱 Simulate an iPad
-      await page.setViewportSize({ width: 768, height: 1024 });
-      await page.goto('/');
-
-      const portfolio = new PortfolioPage(page);
-      await expect(portfolio.heroHeading).toBeVisible();
-    });
-
+    await expect(portfolio.heroHeading).toBeVisible();
+    await expect(portfolio.contactSection).toBeVisible();
   });
+
+  test('Portfolio should look correct on tablet viewport', async ({ page }) => {
+    await page.setViewportSize({ width: 768, height: 1024 });
+    await page.goto('/');
+
+    const portfolio = new PortfolioPage(page);
+
+    await expect(portfolio.heroHeading).toBeVisible();
+  });
+
+});
 
 });

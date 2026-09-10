@@ -1,6 +1,6 @@
-# Eallen Reigner Maninang — Portfolio Website
+# Eallen Reigner Maninang — Software Engineering Portfolio
 
-Personal portfolio website built with HTML, CSS, and JavaScript, deployed via GitHub Pages — with a full automated test suite powered by Playwright.
+Personal software engineering portfolio built with HTML, CSS and JavaScript and deployed through GitHub Pages, with a full automated test suite powered by Playwright and Github Actions.
 
 ![Playwright Tests](https://github.com/eallenreignermaninang/eallenreignermaninang.github.io/actions/workflows/playwright.yml/badge.svg)
 
@@ -8,9 +8,19 @@ Personal portfolio website built with HTML, CSS, and JavaScript, deployed via Gi
 
 ---
 
-## About the Site
+## About the Portfolio
 
-A responsive portfolio showcasing QA engineering and frontend development work, featuring interactive QA documentation, project showcases, and cross-browser compatibility.
+This portfolio showcases my work across software development, quality assurance, test automation, APIs, databases, and academic computer vision.
+
+## Highlights
+- Full-stack software development internship experience
+- 221 Automated Playwright tests across three projects
+- WEB UI, e-commerce, and REST API automation
+- Page Object Model Architecture
+- GitHub Actions CI/CD
+- Real-World defect discovery and regression coverage
+- Python computer-vision academic project
+- Responsive portfolio built with HTML, CSS, and JavaScript.
 
 ### Features
 - Responsive web design
@@ -107,6 +117,7 @@ View the latest run: [Actions Tab](https://github.com/eallenreignermaninang/eall
 
 ## Author
 
-**Eallen Reigner Maninang** — QA Engineer & Frontend Developer
+**Eallen Reigner Maninang**<br>
+Computer Science Graduate | Software Development | QA & Test Automation
 
 [LinkedIn](https://linkedin.com/in/eallenm) · [GitHub](https://github.com/eallenreignermaninang)
