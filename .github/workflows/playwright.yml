@@ -42,7 +42,7 @@ jobs:
 
       # Step 3: Install your project's dependencies (from package.json)
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       # Step 4: Install Playwright browsers (Chromium, Firefox, WebKit)
       - name: Install Playwright browsers
