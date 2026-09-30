@@ -6,7 +6,6 @@
 // Benefits:
 //   ✅ If your HTML changes, you only update ONE file (this one), not every test
 //   ✅ Tests become easier to read — they say WHAT they do, not HOW
-//   ✅ This is a design pattern interviewers WILL ask about
 
 const { expect } = require('@playwright/test');
 
